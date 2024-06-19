@@ -53,10 +53,8 @@
             echo json_encode($in);
              break;
          case 'PATCH':
-            $dados = json_decode(file_get_contents('php://input'));
-            $query = $dados->query;
 
-            $resp = editar_produtos_parcialmente($conexao, $query);
+            $resp = editar_produtos_parcialmente($conexao);
             $resposta = new Resposta('','');
             if($resp){
                 $resposta = criarResposta(204, 'Atualizado com sucesso');
@@ -84,6 +82,10 @@
      }
 
 
+
+
+
+?>
 
 
 
